@@ -1,0 +1,162 @@
+body {
+  background-color:#181819; 
+}
+
+.btn:hover {
+  cursor: pointer; 
+}
+
+#start {
+  height: 100vh;
+  font-family: 'Permanent Marker', cursive;
+  position: relative;
+  background-color: #181819;
+}
+
+.img-background {
+  height: 50vh; 
+  width: auto; 
+}
+.title {
+  font-size: 60px;
+  margin-top: 15vh;
+}
+
+button {
+  margin-left: 40px; 
+}
+
+.button {
+  color: #181819; 
+  background-color: #8568C7;
+  font-family: 'Permanent Marker', cursive;
+  padding: 20px; 
+  font-size: 32px; 
+  border: none;
+  border-radius: 12px;
+}
+
+#start.playing {
+  margin-top: -100vh;
+  transition: margin-top 1s;
+}
+
+#start.playing + #game {
+  display: flex;
+}
+
+#game {
+  display: none;
+}
+
+#game .row {
+  width: 100%;
+}
+
+.container {
+  flex-wrap: wrap;
+}
+
+.game-card-wrapper {
+  perspective: 600px;
+  width: 140px;
+  height: auto;
+  padding-bottom: 75%;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.game-card-wrapper:hover {
+  cursor: pointer;
+}
+
+.game-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.game-card.flipped {
+  transform: rotateY( 180deg );
+}
+
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #181819;
+  overflow: hidden;
+}
+
+.front {
+  background-image: url('Images/Friends.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.back {
+  transform: rotateY( 180deg );
+}
+
+.back > img {
+  width: 140px;
+  height: 186px;
+  border-radius: 8px;
+  border: 1px solid #181819;
+  overflow: hidden;
+}
+
+#end {
+  display: none;
+}
+
+#current-score, #best-score {
+  color: #8568C7; 
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+}
+
+p {
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+}
+
+#end {
+  display: none;
+}
+
+#end.game-over {
+  display: flex;
+  position: absolute;
+  background-color: rgba(0,0,0,0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}
+
+#end h1 {
+  font-size: 10vh;
+  margin-bottom: 28px; 
+}
+
+#end h4 {
+  font-size: 5vh;
+  margin-bottom: 28px; 
+}
